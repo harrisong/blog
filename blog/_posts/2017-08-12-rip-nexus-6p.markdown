@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "RIP Nexus 6p"
+date:   2017-08-12 13:50:55 -0700
+categories: diy update
+---
+My attempt to repair my nexus 6p's fucked up battery
+
+{% assign image_files = site.static_files | where: "image", true %}
+{% for myimage in image_files %}
+  <img src="/blog{{ myimage.path }}" />
+{% endfor %}

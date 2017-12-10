@@ -1,30 +1,24 @@
 <template>
   <div>
     <router-link id="back" to="/">Back</router-link>
-    <img id="avatar" src="../assets/avatar.jpg">
     <h1>{{title}}</h1>
     <span>{{descriptions}}</span>
     <ul>
-      <li v-for='link in links'><a :href='link.href' target="blank">{{ link.name }}</a></li>
+      <li v-for='link in links'></li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'About',
+  name: 'Blog',
   data () {
     return {
-      title: 'Entomologist',
-      descriptions: '🐞 Specialised in code',
-      links: [
+      title: 'Blog',
+      descriptions: 'I hightly doubt I will ever update myself here',
+      posts: [
         {
-          name: 'Github',
-          href: 'http://github.com/harrisong'
-        },
-        {
-          name: 'Linkedin',
-          href: 'https://www.linkedin.com/in/harrison-ng-85958542/'
+          title: ''
         }
       ]
     }

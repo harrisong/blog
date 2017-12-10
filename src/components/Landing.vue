@@ -1,21 +1,21 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ authorName }}</h1>
     <span>{{ descriptions }}</span>
     <ul>
-      <li><a href="/about">About</a></li>
-      <li><a href="/blog">Blog</a></li>
+      <li><router-link to="/about">About</router-link></li>
+      <li><router-link to="/blog">Blog</router-link></li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Landing',
   data () {
     return {
-      msg: 'Harrison Ng',
-      descriptions: 'I make bugs, then I fix some'
+      authorName: 'Harrison Ng',
+      descriptions: 'I make bugs, and (maybe) sometimes, I (accidentally) fix some'
     }
   }
 }
@@ -38,6 +38,6 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #EEAC7A;
+  color: #8F616E;
 }
 </style>

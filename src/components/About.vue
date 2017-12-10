@@ -16,7 +16,7 @@ export default {
   data () {
     return {
       title: 'Entomologist',
-      descriptions: '🐞 Specialised in code',
+      descriptions: 'Specialised in 🐞',
       links: [
         {
           name: 'Github',

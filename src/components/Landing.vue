@@ -2,6 +2,8 @@
   <div class="hello">
     <h1>{{ authorName }}</h1>
     <span>{{ descriptions }}</span>
+    <p></p>
+    <img src="https://media.giphy.com/media/EbBSfrxBz4MNO/giphy.gif" alt="" />
     <ul>
       <li><router-link to="/about">About</router-link></li>
       <li><router-link to="/blog">Blog</router-link></li>

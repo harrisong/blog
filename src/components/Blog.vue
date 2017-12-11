@@ -39,23 +39,5 @@ export default {
 
 <style lang="scss" scoped>
 @import "../scss/global.scss";
-.post {
-  grid-column-start: 2;
-
-  .postMeta {
-    display: flex;
-    margin: 1.5rem 0;
-    h3, .date {
-      width: 50%;
-      margin: 0;
-      line-height: 1rem;
-    }
-    .date {
-      font-style: italic;
-      vertical-align: baseline;
-      color: $light-blue;
-    }
-  }
-
-}
+@import "../scss/post.scss";
 </style>

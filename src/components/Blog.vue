@@ -15,7 +15,7 @@ export default {
   data () {
     return {
       title: 'Blog',
-      descriptions: 'I hightly doubt I will ever update myself here',
+      descriptions: 'I hightly doubt I will post any updates here 🌬️',
       posts: [
         {
           title: ''

@@ -17,7 +17,7 @@ export default {
   data () {
     return {
       authorName: 'Harrison Ng',
-      descriptions: 'I make bugs, and (maybe) sometimes, I (accidentally) fix some'
+      descriptions: 'I make 🐞, and sometimes, I accidentally fix some'
     }
   }
 }
@@ -25,21 +25,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-h1, h2 {
-  font-weight: normal;
-  + span {
-    font-style: italic;
-  }
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #8F616E;
-}
+@import "../scss/global.scss";
 </style>

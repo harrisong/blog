@@ -5,7 +5,7 @@
     <h1>{{title}}</h1>
     <span>{{descriptions}}</span>
     <ul>
-      <li v-for='link in links'><a :href='link.href' target="blank">{{ link.name }}</a></li>
+      <li v-for='link in links'><a :href='link.href' :id="link.name" target="blank">{{ link.name }}</a></li>
     </ul>
   </div>
 </template>
@@ -33,31 +33,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1, h2 {
-  font-weight: normal;
-  + span {
-    font-style: italic;
-  }
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
+@import "../scss/global.scss";
 a {
-  color: #8F616E;
-}
-#back {
-  position: absolute;
-  top: 30px;
-  left: 30px;
+  &#Github, &#Linkedin {
+    display: inline-block;
+    font-size: 0;
+    background-size: 16px 16px;
+    width: 16px;
+    height: 16px;
+    filter: blur(3px);
+    &:hover {
+      filter: blur(0px);
+      border-bottom: 0;
+    }
+  }
+  &#Github {
+    background-image: url('../assets/github.png');
+  }
+  &#Linkedin {
+    background-image: url('../assets/linkedin.svg');
+  }
 }
 #avatar {
   width: 200px;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  filter: blur(3px);
+  &:hover {
+    filter: blur(0px);
+  }
 }
 </style>

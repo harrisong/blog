@@ -1,22 +1,29 @@
 <template>
   <div>
     <router-link id="back" to="/blog">Back</router-link>
-    <h1>{{title}}</h1>
-    <span>{{descriptions}}</span>
-    <div>
-      {{body}}
-    </div>
+    <div v-html="content"></div>
   </div>
 </template>
 
+
 <script>
+function requireAll (requireContext) {
+  return requireContext.keys().map(requireContext)
+}
+
+var Posts = requireAll(require.context('@/posts/', false, /\.md$/))
+var parsedPosts = Posts.map(post => JSON.parse(post))
+
 export default {
   name: 'Blog',
   data () {
     return {
-      title: 'First post',
-      descriptions: 'Some text here',
-      body: 'Some content here'
+    }
+  },
+  computed: {
+    content () {
+      let id = this.$route.params.id.toString()
+      return parsedPosts[id].html
     }
   }
 }

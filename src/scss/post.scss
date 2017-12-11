@@ -8,12 +8,17 @@
       width: 50%;
       margin: 0;
       line-height: 1rem;
+      text-align: left;
     }
     .date {
       font-style: italic;
       vertical-align: baseline;
       color: $light-grey;
       font-size: 0.8rem;
+      text-align: right;
+    }
+    .body {
+      text-align: justify;
     }
   }
 

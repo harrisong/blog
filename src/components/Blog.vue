@@ -4,34 +4,32 @@
     <h1>{{title}}</h1>
     <span>{{descriptions}}</span>
     <ul class="container">
-      <li class="post" v-for='post in posts'>
+      <li class="post" v-for='(post, index) in posts'>
         <div class="postMeta">
-          <h3><router-link v-bind:to="'/blog/' + post.id">{{post.title}}</router-link></h3>
-          <div class="date">{{post.date}}</div>
+          <h3><router-link :to="'/blog/' + index">{{post.meta.title}}</router-link></h3>
+          <div class="date">{{post.meta.created_at}}</div>
         </div>
-        <div>
-          {{post.shortDescriptions}}
-        </div>
+        <div class="body" v-html="post.meta.descriptions"></div>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+function requireAll (requireContext) {
+  return requireContext.keys().map(requireContext)
+}
+
+var Posts = requireAll(require.context('@/posts/', false, /\.md$/))
+var parsedPosts = Posts.map(post => JSON.parse(post))
+
 export default {
   name: 'Blog',
   data () {
     return {
       title: 'Blog',
       descriptions: 'I hightly doubt I will post any updates here 🌬️',
-      posts: [
-        {
-          id: 0,
-          title: 'First post',
-          date: '2017-12-10',
-          shortDescriptions: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nunc elit, egestas ut lacus feugiat, vehicula ultricies ligula. Integer dictum luctus orci, quis euismod nisl maximus quis. In a velit lobortis, laoreet massa rutrum, tempor ex. Proin fermentum elementum dolor nec bibendum. Donec eget sem quam. Integer imperdiet ex eu enim dapibus, vitae commodo tortor dapibus. Cras dapibus ullamcorper bibendum. Suspendisse dapibus libero id nunc congue pretium.'
-        }
-      ]
+      posts: parsedPosts
     }
   }
 }

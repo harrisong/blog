@@ -3,6 +3,8 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const marked = require("marked");
+const renderer = new marked.Renderer();
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -68,6 +70,17 @@ module.exports = {
         }, {
           loader: "sass-loader" // compiles Sass to CSS
         }]
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: "html-loader"
+          },
+          {
+            loader: "yaml-markdown-loader"
+          }
+        ]
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,

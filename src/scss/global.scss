@@ -2,7 +2,7 @@ $dark-grey: #333333;
 $light-grey: #424242;
 $light-blue: #00CCD6;
 $light-white: #EFEFEF;
-$sharp-yello: #FFD900;
+$sharp-yellow: #FFD900;
 
 * {
   transition: all ease-in-out 0.4s;
@@ -34,4 +34,9 @@ a {
   position: absolute;
   top: 30px;
   left: 30px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto 400px auto;
 }
